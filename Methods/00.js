@@ -1,0 +1,3 @@
+/* 
+  prime numbers -> tub sonlar
+*/
