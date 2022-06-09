@@ -6,6 +6,7 @@ Array.prototype.map1 = function (callback) {
   return results;
 }
 
+
 let output = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
 output = output.map1((elem, i, h) => {
   return elem;

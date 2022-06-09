@@ -1,8 +1,8 @@
-const reduce1 = function (callback, accumulator) {
+const reduce1 = function (callback, initialVar) {
   for (let i = 0; i < this.length; i++) {
-    accumulator = callback(accumulator, this[i]);
+    initialVar = callback(callback, initialVar);
   }
-  return accumulator;
+  return initialVar;
 };
 Array.prototype.reduce1 = reduce1;
 
@@ -19,4 +19,3 @@ const sumWithInitial = array1.reduce(
 
 console.log(sumWithInitial);
 // expected output: 10
-
