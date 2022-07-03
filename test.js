@@ -1,15 +1,17 @@
-Array.prototype.map1 = function (callback) {
-  const results = [];
-  for (let i = 0; i < this.length; i++) {
-      results.push(callback(this[i], i, this));
+var divideArray = function (nums) {
+  const { length } = nums;
+  if (length % 2 !== 0) return false;
+  let res = true;
+  nums.sort((a, b) => a - b);
+  for (let i = 0; i < nums.length - 1; i += 2) {
+    if (nums[i] !== nums[i + 1]) {
+      res = false;
+      if (!res) {
+        return res;
+      }
+    }
   }
-  return results;
-}
-
-
-let output = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-output = output.map1((elem, i, h) => {
-  return elem;
-});
-
-console.log(output); // [ 3, 6, 9, 12, 15, 18, 21, 24, 27, 30]
+  return res;
+};
+let nums = [5, 2, 3, 2, 2, 2, 3, 5];
+console.log(divideArray(nums));
