@@ -1,17 +1,29 @@
-var divideArray = function (nums) {
-  const { length } = nums;
-  if (length % 2 !== 0) return false;
-  let res = true;
-  nums.sort((a, b) => a - b);
-  for (let i = 0; i < nums.length - 1; i += 2) {
-    if (nums[i] !== nums[i + 1]) {
-      res = false;
-      if (!res) {
-        return res;
-      }
-    }
+/**
+ * @param {number[]} nums
+ * @param {number[]} index
+ * @return {number[]}
+ */
+// var createTargetArray = function (nums, index) {
+//   let target = [];
+//   for (let i = 0; i < nums.length; i++) {
+//     if (target[index[i]] || target[index[i]] === 0) {
+//       let left = target.slice(0, index[i]);
+//       left.push(nums[i]);
+//       let right = target.slice(index[i]);
+//       target = left.concat(right);
+//     } else {
+//       target[index[i]] = nums[i];
+//     }
+//   }
+//   return target;
+// };
+var createTargetArray = function (nums, index) {
+  let target = [];
+  for (let i = 0; i < nums.length; i++) {
+    target.splice(index[i], 0, nums[i]);
   }
-  return res;
+  return target;
 };
-let nums = [5, 2, 3, 2, 2, 2, 3, 5];
-console.log(divideArray(nums));
+let nums = [0, 1, 0],
+  index = [0, 1, 0];
+console.log(createTargetArray(nums, index)); // [0,4,1,3,2]
