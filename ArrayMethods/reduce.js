@@ -1,21 +1,16 @@
-const reduce1 = function (callback, initialVar) {
+Array.prototype.reduce1 = function (callback, initialVar) {
   for (let i = 0; i < this.length; i++) {
-    initialVar = callback(callback, initialVar);
+    initialVar = callback(this[i], initialVar, i);
   }
   return initialVar;
 };
-Array.prototype.reduce1 = reduce1;
 
 // !====== Test ======
 
 const array1 = [1, 2, 3, 4];
-
-// 0 + 1 + 2 + 3 + 4
-const initialValue = 0;
-const sumWithInitial = array1.reduce(
-  (previousValue, currentValue) => previousValue + currentValue,
-  initialValue
-);
-
-console.log(sumWithInitial);
+const reducedValue = array1.reduce1((pv, cv, i) => {
+  console.log('i = ', i, 'bolganida: ', pv, cv);
+  return pv + cv;
+}, 6);
+console.log(reducedValue);
 // expected output: 10
