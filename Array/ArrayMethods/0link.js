@@ -4,7 +4,7 @@
 // ---> https://blog.logrocket.com/javascript-array-methods/
 const arr = [1, 2, 3, 4, 5];
 // Iterating over collections
-arr.forEach(); 
+arr.forEach();
 arr.map();
 arr.filter();
 arr.reduce();

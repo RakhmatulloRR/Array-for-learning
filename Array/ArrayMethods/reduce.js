@@ -4,13 +4,16 @@ Array.prototype.reduce1 = function (callback, initialVar) {
   }
   return initialVar;
 };
-
 // !====== Test ======
 
 const array1 = [1, 2, 3, 4];
-const reducedValue = array1.reduce1((pv, cv, i) => {
-  console.log('i = ', i, 'bolganida: ', pv, cv);
-  return pv + cv;
-}, 6);
-console.log(reducedValue);
+
+// 0 + 1 + 2 + 3 + 4
+const initialValue = 0;
+const sumWithInitial = array1.reduce1((pV, cV) => {
+  console.log(pV, cV);
+  return pV + cV;
+}, initialValue);
+
+console.log(sumWithInitial);
 // expected output: 10
