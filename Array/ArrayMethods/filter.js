@@ -1,9 +1,8 @@
 Array.prototype.filter1 = function (callback) {
   const newArr = [];
   for (let i = 0; i < this.length; i++) {
-    const element = this[i];
-    if (callback(element, i, this)) {
-      newArr.push(element);
+    if (callback(this[i], i, this)) {
+      newArr.push(this[i]);
     }
   }
   return newArr;
